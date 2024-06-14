@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Header from "../Fragments/Header";
-import Footer from "../Fragments/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 export default function RoutLayout() {
     return <>
-        <Header/>
-        <main className="container">
+        <div className="container">
+            <Header/>
             <Outlet/>
-        </main>
+        </div>
         <Footer/>
     </>
 }
