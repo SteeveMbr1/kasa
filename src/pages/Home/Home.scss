@@ -1,0 +1,39 @@
+.gallery-container {
+    width: 100%;
+
+    border-radius: 25px;
+    background-color: #f6f6f6;
+    padding: 2rem;
+    margin-block: 3.5rem;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+    ;
+
+
+    .card {
+        position: relative;
+
+        margin: 1.2rem;
+
+        width: 340px;
+        height: 340px;
+
+        border-radius: 10px;
+        background-size: cover;
+        box-shadow: inset 0px -102px 10px rgba(0, 0, 0, 0.5);
+
+        .title {
+            position: absolute;
+            bottom: 0;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            width: 100%;
+            padding: 20px;
+        }
+    }
+}

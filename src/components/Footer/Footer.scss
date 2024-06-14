@@ -1,0 +1,22 @@
+.footer {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: #000;
+
+    .brand svg {
+        max-height: 40px;
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    .footer-copyright {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+}
