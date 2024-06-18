@@ -1,6 +1,12 @@
-import "./HeroBanner.scss";
+import './HeroBanner.scss'
 
-export default function HeroBanner( { image, opacity = .5, children = "" } : { image : string, opacity : number, children : string } ) {
+type HeroBannerProps = { 
+    image: string,
+    opacity?: number,
+    children?: string
+};
+
+export default function HeroBanner({ image, opacity = .5, children = "" }: HeroBannerProps) {
     return <div className="hero-banner" style={{
         backgroundImage: `url(${image})`
     }}>

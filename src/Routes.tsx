@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import RoutLayout from "./layouts/RootLayout";
-import Home from "./pages/Home/Home";
-import _404 from "./pages/404/404";
-import About from "./pages/About/About";
+import RoutLayout from "@layouts/RootLayout";
+import Home from "@pages/Home/Home";
+import _404 from "@pages/404/404";
+import About from "@pages/About/About";
+import Appartement from "@pages/Appartement/Appartement";
 
 export default createBrowserRouter( [
     {
@@ -18,8 +19,9 @@ export default createBrowserRouter( [
                 element: <About/>
             },
             {
-                path: "location/:slug",
-                element: <div>page des biens immobiliés</div>
+                path: "appartement/:id",
+                element: <Appartement/>
+
             },
             {
                 path:"*",

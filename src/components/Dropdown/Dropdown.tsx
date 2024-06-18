@@ -1,18 +1,20 @@
-import { MouseEvent, ReactElement, useState } from "react";
+import { MouseEvent, useState } from "react";
 import "./Dropdown.scss";
-import arrow from "../../assets/icons/arrow.svg";
+import arrow from "@assets/icons/arrow.svg";
 
-export default function Dropdown({ title, children }: {
+type DropdownProps = {
     title: string;
-    children: ReactElement;
-}) {
+    children: any;
+};
+
+export default function Dropdown({ title, children }: DropdownProps ) {
     const [toggle, setToggle] = useState(false)
 
 
 
     function toggleActive(e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>): void {
         console.log(e.target);
-
+        e.target.classList.toggle('active');
         setToggle(  !toggle  )
     }
 
