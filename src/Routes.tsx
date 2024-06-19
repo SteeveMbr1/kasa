@@ -5,28 +5,28 @@ import _404 from "@pages/404/404";
 import About from "@pages/About/About";
 import Appartement from "@pages/Appartement/Appartement";
 
-export default createBrowserRouter( [
+export default createBrowserRouter([
     {
         path: "/",
         element: <RoutLayout />,
         children: [
             {
                 path: "",
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: "a-propos",
-                element: <About/>
+                element: <About />
             },
             {
                 path: "appartement/:id",
-                element: <Appartement/>
+                element: <Appartement />
 
             },
             {
-                path:"*",
-                element: <_404/>
+                path: "*",
+                element: <_404 />
             }
         ]
     }
-] );
+]);

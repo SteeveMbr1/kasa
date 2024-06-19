@@ -1,0 +1,90 @@
+.carrousel {
+    width: 100%;
+    min-height: 415px;
+    background-color: aqua;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+        font-size: 2.25rem;
+        color: #ff6060;
+        font-weight: 500;
+    }
+
+    .location {
+        font-size: 1.12rem;
+    }
+
+    .tags-list {
+        display: flex;
+        flex-direction: row;
+        gap: 0.62rem;
+
+        li {
+            height: 25px;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 20px;
+            text-align: center;
+
+            padding: 0.2rem 2.5rem;
+            background-color: #ff6060;
+            border-radius: 10px;
+        }
+    }
+
+    .host {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        gap: 0.62rem;
+
+        .name {
+            display: flex;
+            flex-direction: row-reverse;
+
+            font-size: 1.25rem;
+            text-align: right;
+            color: #ff6060;
+            inline-size: 100px;
+        }
+
+        .picture {
+            display: inline-block;
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .rating {
+        text-align: right;
+
+        .rate-stars {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            gap: 4px;
+
+            .star {
+                &::before {
+                    content: url(../../assets/icons/star.svg);
+                }
+
+                &.shining::before {
+                    content: url(../../assets/icons/star-active.svg);
+                }
+            }
+        }
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}

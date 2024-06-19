@@ -4,10 +4,10 @@ import arrow from "@assets/icons/arrow.svg";
 
 type DropdownProps = {
     title: string;
-    children: any;
+    children?: any;
 };
 
-export default function Dropdown({ title, children }: DropdownProps ) {
+export default function Dropdown({ title, children }: DropdownProps) {
     const [toggle, setToggle] = useState(false)
 
 
@@ -15,7 +15,7 @@ export default function Dropdown({ title, children }: DropdownProps ) {
     function toggleActive(e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>): void {
         console.log(e.target);
         e.target.classList.toggle('active');
-        setToggle(  !toggle  )
+        setToggle(!toggle)
     }
 
     return (

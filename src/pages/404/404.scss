@@ -1,0 +1,18 @@
+._404-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.8rem;
+    color: #ff6060;
+    margin-bottom: 8rem;
+
+    ._404 {
+        font-weight: 700;
+        font-size: 18rem;
+    }
+
+    a {
+        color: #000;
+    }
+}

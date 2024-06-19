@@ -8,23 +8,22 @@
 }
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between
-    ;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
 
     .card {
         position: relative;
-
-        margin: 1.2rem;
 
         width: 340px;
         height: 340px;
 
         border-radius: 10px;
         background-size: cover;
-        box-shadow: inset 0px -102px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0px -100px 10px -10px rgba(0, 0, 0, 0.5);
 
         .title {
             position: absolute;
