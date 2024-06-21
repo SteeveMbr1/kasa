@@ -1,0 +1,46 @@
+.carousel {
+    position: relative;
+
+    .slides {
+
+        height: 415px;
+
+        .item {
+            display: inline-block;
+            height: 100%;
+            position: absolute;
+            visibility: hidden;
+
+            
+            &.current {
+                left: 0;
+                visibility: visible;
+
+                & > * {
+                    max-height: 415px;
+                }
+            }
+        }
+    }
+
+    .next-btn {
+        height: 4rem;
+        width: 4rem;
+        background-color: aqua;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .prev-btn {
+        height: 4rem;
+        width: 4rem;
+        background-color: greenyellow;
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
