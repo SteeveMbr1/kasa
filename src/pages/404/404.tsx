@@ -13,10 +13,10 @@ export default function _404() {
   });
 
   return (
-    <div className="_404-container">
-      <p className="_404">404</p>
-      <p>Oups! La page que vous demandez n'existe pas.</p>
-      <p><NavLink to="/">Retourner sur la page d’accueil</NavLink></p>
+    <div className="page-404">
+        <p className="error-404">404</p>
+        <p className="error-message">Oups! La page que vous demandez n'existe pas.</p>
+        <p><NavLink  className="back-home" to="/">Retourner sur la page d’accueil</NavLink></p>
     </div>
   );
 }

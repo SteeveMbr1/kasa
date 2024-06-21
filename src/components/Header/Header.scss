@@ -1,20 +1,44 @@
 .header {
+    width: 100%;
+    max-width: 1240px;
     display: flex;
     justify-content: space-between;
-    margin-block: 3rem;
+    align-items: center;
+
+
+    .brand svg {
+        height: 68px;
+        width: fit-content;
+    }
 
     .nav .links {
         display: flex;
-        gap: 3rem;
-    }
+        flex-direction: row;
+        gap: 4rem;
 
-    .links a {
-        color: black;
-        font-size: 24px;
-        text-decoration: none;
+        font-size: var(--font-size-h2);
 
-        &.active {
+        a {
+            color: var(--color-black);
+        }
+
+        a.active {
             text-decoration: underline;
         }
     }
+}
+
+@media (width < 768px) {
+    .header {
+        padding: 20px;
+        .brand svg {
+            height: 46px;
+        }
+
+        .nav .links {
+            gap: 2rem;
+            font-size: var(--font-size-main);
+        }
+    }
+
 }
