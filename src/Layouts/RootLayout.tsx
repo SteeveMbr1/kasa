@@ -4,8 +4,8 @@ import Footer from "../components/Footer/Footer";
 
 export default function RoutLayout() {
     return <>
-        <div className="container">
-            <Header/>
+        <Header/>
+        <div className="content">
             <Outlet/>
         </div>
         <Footer/>
