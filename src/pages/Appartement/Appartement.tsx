@@ -4,6 +4,7 @@ import "./Appartement.scss";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import RateStars from "@components/RateStars/RateStars.tsx";
+import Carrousel from "@components/Carousel/Carousel";
 
 export default function Appartement() {
     const { id } = useParams();
@@ -15,29 +16,27 @@ export default function Appartement() {
     }, []);
 
 
-
-
     async function  _init() {
-        const _apparts = await logements(id)
+        const logement = await logements(id)
 
-        if ( !_apparts ) {
+        if ( !logement ) {
             navigate('404', {replace : true})
         }
 
-        setAppart(_apparts)
+        setAppart(logement)
     }
 
     return (
         <>
-            <div className="carrousel">
-                <img src={appart.cover } alt="" />
-            </div>
-            <main className="content">
+            <Carrousel>
+                {appart.pictures?.map( (e,i) => <img src={e} key={i}/> )}
+            </Carrousel>
+            <main className="container">
                 <aside>
-                    <h1 className="title">{appart.title}</h1>
-                    <p className="location">{appart.location}</p>
+                    <h1 className="title">{ appart.title }</h1>
+                    <p className="location">{ appart.location }</p>
                     <ul className="tags-list">
-                        {appart.tags?.map((e, i) => <li key={i}>{e}</li> )}
+                        { appart.tags?.map((e, i) => <li key={i}>{e}</li> ) }
                     </ul>
                 </aside>
                 <aside>
@@ -50,7 +49,7 @@ export default function Appartement() {
             </main>
             <section className="details">
                 <Dropdown title="Description">{ appart?.description }</Dropdown>
-                <Dropdown title="Équipement">{  appart.equipments?.map((e, i) => <li key={i}>{e}</li> ) } </Dropdown>
+                <Dropdown title="Équipement">{ appart.equipments?.map( (e, i) => <li key={i}>{e}</li> ) } </Dropdown>
             </section>
         </>
     );
