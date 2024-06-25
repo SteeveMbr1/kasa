@@ -26,7 +26,7 @@ export default function Carousel({ children } : { children : any }) {
             { Children.map(children, (e, i) => {
                 const stat = i == currentIndex ? 'current' : i == prevIndex() ? 'prev' : i == nextIndex() ? 'next' : '';
                 return (<>
-                        <div className={`carousel-image-container ${stat}`}>
+                        <div key={i} className={`carousel-image-container ${stat}`}>
                             <img src={e} alt={`Slide ${i}`} className="carousel-image" />
                         </div>
                         {i == currentIndex && <span className="info">{`${currentIndex+1}/${childLenght}`}</span>}

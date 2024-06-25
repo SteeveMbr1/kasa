@@ -6,10 +6,10 @@
     --color-gray: #f6f6f6;
     --color-white: #fff;
 
-    --font-size-h1: 36px;
-    --font-size-h2: 24px;
-    --font-size-main: 18px;
-    --font-size-sub: 14px;
+    --font-size-h1: 18px;
+    --font-size-h2: 14px;
+    --font-size-main: 12px;
+    --font-size-sub: 12px;
 }
 
 *,
@@ -37,6 +37,8 @@ body {
 
 #root {
     min-height: 100%;
+    width: 100%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,19 +49,27 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1240px;
+    padding-inline: 20px;
 }
 
-@media (width < 768px) {
+@media (width >= 768px) {
+
     :root {
-        --font-size-h1: 18px;
-        --font-size-h2: 14px;
-        --font-size-main: 12px;
-        --font-size-sub: 12px;
+        --font-size-h1: 36px;
+        --font-size-h2: 24px;
+        --font-size-main: 18px;
+        --font-size-sub: 14px;
     }
 
-    .content {
-        width: 100%;
-        max-width: 335px;
+}
+
+@media (width >= 1024px) {
+
+    :root {
+        --font-size-h1: 36px;
+        --font-size-h2: 24px;
+        --font-size-main: 18px;
+        --font-size-sub: 14px;
     }
+
 }

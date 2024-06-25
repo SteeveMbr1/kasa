@@ -8,7 +8,7 @@ export default function _404() {
 
   useEffect(() => {
     if (location.pathname !== "/404") {
-      navigate("/404", { replace: true });
+      navigate("/404");
     }
   });
 

@@ -5,18 +5,20 @@
     justify-content: space-between;
     align-items: center;
 
+    padding: 20px;
 
     .brand svg {
-        height: 68px;
         width: fit-content;
+        height: 46px;
     }
 
     .nav .links {
         display: flex;
         flex-direction: row;
-        gap: 4rem;
+        gap: 2rem;
 
-        font-size: var(--font-size-h2);
+        font-size: var(--font-size-main);
+        text-transform: uppercase;
 
         a {
             color: var(--color-black);
@@ -28,16 +30,17 @@
     }
 }
 
-@media (width < 768px) {
+@media (width >= 768px) {
     .header {
-        padding: 20px;
+
         .brand svg {
-            height: 46px;
+            height: 68px;
         }
 
         .nav .links {
-            gap: 2rem;
-            font-size: var(--font-size-main);
+            gap: 4rem;
+            font-size: var(--font-size-h2);
+            text-transform: unset;
         }
     }
 

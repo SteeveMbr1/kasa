@@ -5,9 +5,11 @@
     align-items: center;
     justify-content: center;
 
-    height: 223px;
+    min-height: 110px;
+    max-height: 223px;
+    aspect-ratio: 1240/223;
     width: 100%;
-    border-radius: 25px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
@@ -26,23 +28,28 @@
         position: absolute;
         padding: 1rem;
 
-        font-size: 3rem;
+        font-size: 1.33rem;
         font-weight: 700;
         color: #ffffff;
-        text-shadow: -1px -1px 0 #000,
-                    1px -1px 0 #000,
-                    -1px 1px 0 #000,
-                    1px 1px 0 #000;
     }
 }
 
-@media (width < 768px) {
+@media (width >= 768px) {
     .hero-banner {
-        height: 110px;
-        border-radius: 10px;
+        border-radius: 25px;
 
         .hero-text {
-            font-size: 1.33rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (width >= 1204px) {
+    .hero-banner {
+        border-radius: 25px;
+
+        .hero-text {
+            font-size: 3rem;
         }
     }
 }

@@ -23,6 +23,7 @@ interface Accommodation {
     equipments: string[];
     tags: string[];
 }
+
 export default function Appartement() {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -37,7 +38,7 @@ export default function Appartement() {
         const logement = await fetchById(id)
 
         if ( logement === undefined ) {
-            navigate('404', {replace : true})
+            navigate('404')
         }
 
         setAppart(logement)
@@ -53,19 +54,19 @@ export default function Appartement() {
                 {appart.pictures}
             </Carrousel>
             <main className="container">
-                <aside>
+                <aside className="description">
                     <h1 className="title">{ appart.title }</h1>
                     <p className="location">{ appart.location }</p>
                     <ul className="tags-list">
                         { appart.tags?.map((e, i) => <li key={i}>{e}</li> ) }
                     </ul>
                 </aside>
-                <aside>
-                    <div className="host">
+                <aside className="host">
+                <RateStars rate={appart.rating}/>
+                <div className="owner">
                         <span className="name">{ appart.host?.name }</span>
                         <img className="picture" src={ appart.host?.picture }></img>
                     </div>
-                    <RateStars rate={3}/>
                 </aside>
             </main>
             <section className="details">

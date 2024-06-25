@@ -1,7 +1,7 @@
 import HeroBanner from '@components/HeroBanner/HeroBanner';
 import image from '@assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpeg'
 import './Home.scss'
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -16,8 +16,10 @@ export default function Home() {
 
     }, []);
 
-    function clikedOn(e, bien) {
-        navigate('appartement/' + bien.id, {replace : true});
+    function clikedOn(event: MouseEvent<HTMLAnchorElement, MouseEvent>): void {
+        event.preventDefault();
+        const nav = event.currentTarget.getAttribute('href') as string;
+        navigate(nav);
     }
 
     return (
@@ -27,11 +29,10 @@ export default function Home() {
                 <ul className="cards">
                     {biens.map((bien) => {
                         return (
-                            <li key={bien.id} onClick={(e) => clikedOn(e, bien)}>
-                                <a href={`appartement/${bien.id}`}></a>
-                                <div className="card" style={{
-                                    backgroundImage: `url(${bien.cover})`,
-                                }}>
+                            <li key={bien.id} >
+                                <div className="card">
+                                    <a href={`/appartement/${bien.id}`} onClick={clikedOn}></a>
+                                    <img src={bien.cover} alt="" />
                                     <p className="title">{bien.title}</p>
                                 </div>
                             </li>
