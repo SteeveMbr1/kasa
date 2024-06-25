@@ -34,25 +34,23 @@
     }
 
     .content {
-        padding: 1.25rem 1.25rem;
-        font-size: 1.25rem;
-        line-height: 1.62rem;
-
+        padding: 0rem 1.25rem;
         transform: scaleY(0);
-        display: none;
         height: 0;
+        transition: all 200ms ease-in;
     }
 
     height: 3.5rem;
-    transition: height 2s ease-in;
+    transition: all 200ms ease-in;
 
     &:has(.active) {
         height: 100%;
-
         .content {
-            display: block;
             height: 100%;
             transform: scaleY(1);
+            padding: 1.25rem 1.25rem;
+            font-size: 1.25rem;
+            line-height: 1.62rem;
         }
     }
 }

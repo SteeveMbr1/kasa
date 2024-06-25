@@ -2,34 +2,42 @@ import { Children, useState } from 'react';
 import "./Carousel.scss";
 
 export default function Carousel({ children } : { children : any }) {
-    const [slide, setSlide] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const childLenght = Children.count(children);
 
-    function next() {
-        setSlide((s) => {
-            return s - 1 < 0 ? Children.count(children) - 1 : s - 1;
-        })
+    const nextIndex = () => {
+        return (currentIndex + 1) % childLenght
     }
 
-    function prev() {
-        setSlide((s) => {
-            return s + 1 < Children.count(children) ? s + 1 : 0;
-        })
+    const prevIndex = () => {
+        return (currentIndex - 1 + childLenght) % childLenght
     }
+
+    const handlePrev = () => {
+        setCurrentIndex(prevIndex);
+    };
+
+    const handleNext = () => {
+        setCurrentIndex(nextIndex);
+    };
 
     return (
         <div className="carousel">
-            <div className="slides">
-                { Children.map( children, (e, i) => {
-                    const cls = (i == slide) ? "item current" : "item";
-                    return <div className={cls}>{e}</div>
-                }) }
-            </div>
-            { Children.count(children) > 1 && 
-            (<>
-                <div className="next-btn" onClick={next}></div>
-                <div className="prev-btn" onClick={prev}></div>
-            </>) 
-            }
+            { Children.map(children, (e, i) => {
+                const stat = i == currentIndex ? 'current' : i == prevIndex() ? 'prev' : i == nextIndex() ? 'next' : '';
+                return (<>
+                        <div className={`carousel-image-container ${stat}`}>
+                            <img src={e} alt={`Slide ${i}`} className="carousel-image" />
+                        </div>
+                        {i == currentIndex && <span className="info">{`${currentIndex+1}/${childLenght}`}</span>}
+                    </>);
+            } ) }
+            <button className="carousel-button prev-button" onClick={handlePrev}>
+                &#10094;
+            </button>
+            <button className="carousel-button next-button" onClick={handleNext}>
+                &#10095;
+            </button>
         </div>
     );
 }

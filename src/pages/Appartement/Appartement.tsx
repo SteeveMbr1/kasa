@@ -1,15 +1,32 @@
 import Dropdown from "@components/Dropdown/Dropdown.tsx";
-import logements from "@src/utils/logements";
 import "./Appartement.scss";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import RateStars from "@components/RateStars/RateStars.tsx";
 import Carrousel from "@components/Carousel/Carousel";
+import { fetchById } from "@src/services/services.ts";
 
+interface Host {
+    name: string;
+    picture: string;
+}
+
+interface Accommodation {
+    id: string;
+    title: string;
+    cover: string;
+    pictures: string[];
+    description: string;
+    host: Host;
+    rating: string;
+    location: string;
+    equipments: string[];
+    tags: string[];
+}
 export default function Appartement() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [appart, setAppart] = useState({});
+    const [appart, setAppart] = useState<Accommodation>();
 
     useEffect(() => {
         _init()
@@ -17,19 +34,23 @@ export default function Appartement() {
 
 
     async function  _init() {
-        const logement = await logements(id)
+        const logement = await fetchById(id)
 
-        if ( !logement ) {
+        if ( logement === undefined ) {
             navigate('404', {replace : true})
         }
 
         setAppart(logement)
     }
 
+    if (appart === undefined) {
+        return <>Loading</>
+    }
+
     return (
         <>
             <Carrousel>
-                {appart.pictures?.map( (e,i) => <img src={e} key={i}/> )}
+                {appart.pictures}
             </Carrousel>
             <main className="container">
                 <aside>

@@ -10,12 +10,10 @@ type DropdownProps = {
 export default function Dropdown({ title, children }: DropdownProps) {
     const [toggle, setToggle] = useState(false)
 
-
-
     function toggleActive(e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>): void {
-        console.log(e.target);
-        e.target.classList.toggle('active');
-        setToggle(!toggle)
+        const element = e.currentTarget as HTMLDivElement;
+        element.classList.toggle('active');
+        setToggle(!toggle);
     }
 
     return (

@@ -1,46 +1,79 @@
 .carousel {
+    height: 235px;
+    width: 100%;
+
     position: relative;
 
-    .slides {
+    display: flex;
+    flex-direction: row;
 
-        height: 415px;
+    overflow: hidden;
 
-        .item {
-            display: inline-block;
-            height: 100%;
-            position: absolute;
-            visibility: hidden;
+    .info {
+        justify-self: center;
+    }
 
-            
-            &.current {
-                left: 0;
-                visibility: visible;
+    .carousel-image-container {
+        height: 100%;
+        width: 0;
+        position: absolute;
 
-                & > * {
-                    max-height: 415px;
-                }
-            }
+        display: flex;
+        justify-content: center;
+
+        transition: left ease-in-out 1s, width ease 0.5s;
+
+        &.current {
+            width: 100%;
+            left: 0;
+        }
+
+        &.prev {
+            left: -100%;
+        }
+
+        &.next {
+            left: 100%;
+        }
+
+        .carousel-image {
+            width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+
+    }
+
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+            1px 1px 0 #000;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+
+        &.prev-button {
+            left: 0;
+        }
+
+        &.next-button {
+            right: 0;
         }
     }
+}
 
-    .next-btn {
-        height: 4rem;
-        width: 4rem;
-        background-color: aqua;
+@media (width > 720px) {
+    .carousel {
+        height: 415px;
 
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .prev-btn {
-        height: 4rem;
-        width: 4rem;
-        background-color: greenyellow;
-
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
+        .carousel-button {
+            font-size: 3rem;
+        }
     }
 }
