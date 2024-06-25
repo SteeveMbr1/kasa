@@ -8,6 +8,8 @@
             font-weight: 500;
             font-size: var(--font-size-h1);
             color: var(--color-main);
+            padding-block: .2rem;
+            line-height: 1.6rem;
         }
 
         .location {
@@ -16,7 +18,6 @@
 
         .tags-list {
             display: flex;
-            flex: 1;
             gap: .5rem;
             padding-block: .8rem;
 
@@ -25,9 +26,9 @@
                 color: var(--color-white);
                 font-size: 10px;
                 font-weight: 700;
-                line-height: 14px;
-                padding-inline: 1rem;
-                border-radius: 5px;
+                line-height: 142.6%;
+                padding-inline: 15px;
+                border-radius: 10px;
             }
         }
     }
@@ -35,20 +36,69 @@
     .host {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         .owner {
             display: flex;
+            justify-content: right;
             align-items: center;
-            gap: 10px;
+            gap: 0.62rem;
 
             .name {
-                color: var(--color-main);
-                word-break: normal;
-                width: 2rem;
+                display: flex;
+                flex-direction: row-reverse;
+
+                font-size: var(--font-size-main);
+                text-align: right;
+                color: #ff6060;
+                inline-size: 1rem;
             }
+
             .picture {
                 border-radius: 50%;
-                max-height: 64px;
+                width: 32px;
+                aspect-ratio: 1;
+            }
+        }
+    }
+}
+
+@media (width >= 1024px) {
+    .container {
+        .description {
+            .title {
+                padding-block: .8 rem;
+                line-height: 2rem;
+            }
+            .location {
+                font-size: var(--font-size-main);
+            }
+            .tags-list {
+                li {
+                    font-size: 14px;
+                    text-align: center;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .host {
+            align-items: flex-end;
+            flex-direction: column-reverse;
+            gap: 1rem;
+
+            .rating-stars {
+                .rate {
+                    .star img {
+                        height: 24px;
+                    }
+                }
+            }
+
+            .owner {
+                .picture {
+                    width: 64px;
+                }
             }
         }
     }
