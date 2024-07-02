@@ -31,8 +31,8 @@ export default function Home() {
                         return (
                             <li key={bien.id} >
                                 <div className="card">
+                                    <img src={bien.cover} alt={bien.title} />
                                     <a href={`/appartement/${bien.id}`} onClick={clikedOn}></a>
-                                    <img src={bien.cover} alt="" />
                                     <p className="title">{bien.title}</p>
                                 </div>
                             </li>
