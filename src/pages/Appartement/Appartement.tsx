@@ -6,18 +6,18 @@ import RateStars from "@components/RateStars/RateStars.tsx";
 import Carrousel from "@components/Carousel/Carousel";
 import { fetchById } from "@src/services/services.ts";
 
-interface Host {
+interface HostInterface {
     name: string;
     picture: string;
 }
 
-interface Accommodation {
+interface ApartmentInterface {
     id: string;
     title: string;
     cover: string;
     pictures: string[];
     description: string;
-    host: Host;
+    host: HostInterface;
     rating: string;
     location: string;
     equipments: string[];
@@ -27,7 +27,7 @@ interface Accommodation {
 export default function Appartement() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [appart, setAppart] = useState<Accommodation>();
+    const [appart, setAppart] = useState<ApartmentInterface>();
 
     useEffect(() => {
         _init()
@@ -35,17 +35,17 @@ export default function Appartement() {
 
 
     async function  _init() {
-        const logement = await fetchById(id)
+        const json = await fetchById(id)
 
-        if ( logement === undefined ) {
+        if ( json === undefined ) {
             navigate('404')
         }
 
-        setAppart(logement)
+        setAppart(json)
     }
 
     if (appart === undefined) {
-        return <>Loading</>
+        return <>Loading...</>
     }
 
     return (
