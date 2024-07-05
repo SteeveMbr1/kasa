@@ -4,7 +4,9 @@ import router from './Routes'
 import './App.scss'
 
 function App() {
-    return <RouterProvider router={router} />
+    return <div className="app">
+        <RouterProvider router={router} />
+    </div>
 }
 
 export default App

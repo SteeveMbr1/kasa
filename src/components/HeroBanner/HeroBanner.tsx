@@ -7,10 +7,9 @@ type HeroBannerProps = {
 };
 
 export default function HeroBanner({ image, opacity = .5, children = "" }: HeroBannerProps) {
-    return <div className="hero-banner" style={{
-        backgroundImage: `url(${image})`
-    }}>
-        <div className="layer" style={{
+    return <div className="hero">
+        <img className='hero-img' src={image}/>
+        <div className="hero-layer" style={{
             backgroundColor: `rgba(0,0,0, ${opacity})`
         }}></div>
         <p className="hero-text">{children}</p>

@@ -4,18 +4,14 @@ import Logo from "../Logo/Logo";
 
 export default function Header() {
   return (
-    <header className="header">
-      <Logo/>
-      <nav className="nav">
-        <ul className="links">
-          <li>
-            <NavLink to="/">Accueil</NavLink>
-          </li>
-          <li>
-            <NavLink to="/a-propos">A propos</NavLink>
-          </li>
-        </ul>
-      </nav>
+    <header className="container">
+        <div className=" header">
+            <Logo/>
+            <nav className="nav">
+                <NavLink className="nav-btn" to="/">Accueil</NavLink>
+                <NavLink className="nav-btn" to="/a-propos">A propos</NavLink>
+            </nav>
+        </div>
     </header>
   );
 }

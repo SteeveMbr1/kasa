@@ -18,11 +18,11 @@ export default function Dropdown({ title, children }: DropdownProps) {
 
     return (
         <div className="dropdown">
-            <div className="top-bar">
-                <div className="title">{title} </div>
-                <div className="arrow" onClick={(e) => toggleActive(e)}>&#10095;</div>
+            <div className="dd-header" onClick={toggleActive}>
+                <div className="dd-title">{title}</div>
+                <span className="dd-arrow">&#x276E;</span>
             </div>
-            <div className="content">{children}</div>
+            <div className="dd-content">{children}</div>
         </div>
     );
 }

@@ -1,30 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-:root {
-    --color-main: #ff6060;
-    --color-black: #000;
-    --color-gray: #f6f6f6;
-    --color-white: #fff;
-
-    --font-size-h1: 18px;
-    --font-size-h2: 14px;
-    --font-size-main: 12px;
-    --font-size-sub: 12px;
-}
-
-*,
-::before,
-::after {
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     list-style: none;
-    text-decoration: none;
+    color: inherit;
 }
 
-body,
-html {
-    height: 100%;
+:root {
+    --color-primary : #FF6060;
+    --color-gray: #F6F6F6;
 }
 
 body {
@@ -32,44 +16,34 @@ body {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-size: var(--font-size-main);
 }
 
-#root {
-    min-height: 100%;
+.container {
     width: 100%;
-    margin: auto;
+    min-width: 375px;
+    margin-inline: auto;
+    padding: .5rem 1rem;
+}
+
+.app {
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
 
-.content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-inline: 20px;
-}
-
-@media (width >= 768px) {
-
-    :root {
-        --font-size-h1: 36px;
-        --font-size-h2: 24px;
-        --font-size-main: 18px;
-        --font-size-sub: 14px;
+    .container:has(.content) {
+        flex: 1;
     }
-
 }
 
-@media (width >= 1024px) {
-
-    :root {
-        --font-size-h1: 36px;
-        --font-size-h2: 24px;
-        --font-size-main: 18px;
-        --font-size-sub: 14px;
+@media (width >= 768px ) {
+    .container {
+        max-width: 768px;
     }
+}
 
+@media (width >= 1240px ) {
+    .container {
+        max-width: 1240px;
+    }
 }

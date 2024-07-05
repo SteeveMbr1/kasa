@@ -1,40 +1,40 @@
 .dropdown {
     width: 100%;
-    background-color: #f6f6f6;
+    background-color: var(--color-gray);
+
+    border-radius: 5px;
     margin-block: 1rem;
 
-    .top-bar {
-        background-color: #ff6060;
-        border-radius: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-inline: 1rem;
+    .dd-header {
+        background-color: var(--color-primary);
+            border-radius: 5px;
+            padding: .5rem;
 
-        .title {
+            display: flex;
+            justify-content: space-between;
             color: #fff;
+
+        .dd-title {
             font-weight: 700;
         }
 
-        .arrow {
-            transition: all ease-in 200ms;
-            color: #f6f6f6;
-            font-weight: 700;
+        .dd-arrow {
+            display: inline-block;
+            height: 21px;
+            width: 21px;
+            text-align: center;
+
             transform: rotate(90deg);
-
-            &.active {
-                transform: rotate(270deg);
-                transition: all ease-in 200ms;
-            }
+            transition: transform 200ms ease-in;
         }
 
-        .arrow img {
-            pointer-events: none;
+        &.active .dd-arrow {
+            transform: rotate(-90deg);
         }
     }
 
-    .content {
-        padding: 0rem 1.25rem;
+    .dd-content {
+        padding: 0rem .5rem;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -42,8 +42,8 @@
     }
 
     &:has(.active) {
-        .content {
-            padding-block: 1.25rem;
+        .dd-content {
+            padding: 1rem .5rem;
             max-height: 100vh;
             opacity: 1;
             transition: all 200ms ease-in;
