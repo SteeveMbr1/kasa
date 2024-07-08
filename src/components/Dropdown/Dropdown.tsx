@@ -20,7 +20,7 @@ export default function Dropdown({ title, children }: DropdownProps) {
         <div className="dropdown">
             <div className="dd-header" onClick={toggleActive}>
                 <div className="dd-title">{title}</div>
-                <span className="dd-arrow">&#x276E;</span>
+                <img className="dd-arrow" src={arrow} alt="toogle dropdown" />
             </div>
             <div className="dd-content">{children}</div>
         </div>

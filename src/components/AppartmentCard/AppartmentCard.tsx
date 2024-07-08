@@ -1,11 +1,18 @@
 import "./AppartmentCard.scss";
 
-export default function AppartmentCard({cover, title} : {cover: string, title: string}) {
-  return (
-    <div className="appartment-card">
-        <img className="card-img" src={cover} />
-        <div className="card-layer"></div>
-        <p className="card-title">{title}</p>
-    </div>
-  )
+type AppartmentCardPorps = {
+    cover: string;
+    title: string;
+    link: string;
+    clickEvent?: any;
+};
+
+export default function AppartmentCard({ cover, title, link, clickEvent }: AppartmentCardPorps) {
+    return (
+        <div className="appartment-card">
+            <img className="card-img" src={cover} />
+            <a className="card-layer" href={link} onClick={clickEvent}></a>
+            <p className="card-title">{title}</p>
+        </div>
+    );
 }

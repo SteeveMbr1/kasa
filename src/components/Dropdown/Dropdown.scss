@@ -24,12 +24,11 @@
             width: 21px;
             text-align: center;
 
-            transform: rotate(90deg);
             transition: transform 200ms ease-in;
         }
 
         &.active .dd-arrow {
-            transform: rotate(-90deg);
+            transform: rotate(-180deg);
         }
     }
 

@@ -23,6 +23,10 @@ body {
     min-width: 375px;
     margin-inline: auto;
     padding: .5rem 1rem;
+
+    .content {
+        width: 100%;
+    }
 }
 
 .app {
@@ -42,8 +46,8 @@ body {
     }
 }
 
-@media (width >= 1240px ) {
+@media (width >= 1024px ) {
     .container {
-        max-width: 1240px;
+        max-width: 1024px;
     }
 }

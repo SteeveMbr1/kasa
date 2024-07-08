@@ -1,101 +1,69 @@
-.carousel {
+.carrousel {
     width: 100%;
-    aspect-ratio: 335/255;
+    height: 300px;
     border-radius: 10px;
-
     position: relative;
-
-    display: flex;
-    flex-direction: row;
-
     overflow: hidden;
 
-    .carousel-image-container {
+    .items {
+        position: relative;
         height: 100%;
-        opacity: 0;
-        position: absolute;
 
-        transition: left ease-in-out 500ms, opacity ease-in-out 500ms;
 
-        &.current {
-            opacity: 1;
-            width: 100%;
-            left: 0;
-        }
+        flex-wrap: nowrap;
 
-        &.prev {
-            left: -100%;
-        }
-
-        &.next {
-            left: 100%;
-        }
-
-        .carousel-image {
+        .item-container {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 300ms ease-in;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+
+            * {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                background-color: aquamarine;
+            }
+
+            &.current {
+                opacity: 1;
+            }
         }
 
     }
 
+    .carrousel-arrow {
+        display: block;
+        color: #fff;
+        font-size: 1.2rem;
+        padding: 1rem;
 
-    .carousel-button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0);
-        color: white; 
-        border: none;
-        padding: 1rem;
-        font-size: 24px;
 
-        &:hover, &:focus {
-            background-color: rgba(0, 0, 0, 0.1);
+        &:hover {
+            background-color: #00000056;
         }
 
-        &.prev-button {
-            left: 0;
-        }
-
-        &.next-button {
+        &.right {
             right: 0;
         }
     }
 
-    .info {
+    .show-current {
         display: none;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        color: #fff;
     }
 }
+
 
 @media (width >= 768px) {
-
-    .carousel {
-        aspect-ratio: 1240/415;
-        border-radius: 25px;
-
-        .info {
-            display: block;
-            position: absolute;
-            align-self: flex-end;
-            width: 100%;
-            text-align: center;
-            padding: 1rem;
-            color: white;
-            font-size: 18px;
-        }
-
-        .carousel-button {
-            font-size: 2rem;
-        }
-    }
-
-}
-
-@media (width >= 1024px) {
-    .carousel {
-        .carousel-button {
-            font-size: 3rem;
-        }
+    .carrousel .show-current {
+        display: block;
     }
 }

@@ -4,3 +4,9 @@
         gap: 0.3rem;
     }
 }
+
+@media (width >= 768px) {
+    .star {
+        height: 24px;
+    }
+}

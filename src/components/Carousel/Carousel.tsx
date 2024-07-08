@@ -1,43 +1,33 @@
-import { Children, useState } from 'react';
-import "./Carousel.scss";
+import { useState } from "react";
+import "./Carousel.scss"
 
-export default function Carousel({ children } : { children : any }) {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const childLenght = Children.count(children);
+export default function Carousel({imagesList} : {imagesList : string[]}) {
 
-    const nextIndex = () => {
-        return (currentIndex + 1) % childLenght
+    const [current, setCurrent] = useState<number>(0);
+    const listLenght = imagesList.length;
+
+    function handleNext(event: MouseEvent): void {
+        setCurrent((current) => (current + 1) % listLenght );
     }
 
-    const prevIndex = () => {
-        return (currentIndex - 1 + childLenght) % childLenght
+    function handlePrev(event: MouseEvent): void {
+        setCurrent((current) => (current - 1 + listLenght) % listLenght );
     }
 
-    const handlePrev = () => {
-        setCurrentIndex(prevIndex);
-    };
-
-    const handleNext = () => {
-        setCurrentIndex(nextIndex);
-    };
-
-    return (
-        <div className="carousel">
-            { Children.map(children, (e, i) => {
-                const stat = i == currentIndex ? 'current' : i == prevIndex() ? 'prev' : i == nextIndex() ? 'next' : '';
-                return (<>
-                        <div key={i} className={`carousel-image-container ${stat}`}>
-                            <img src={e} alt={`Slide ${i}`} className="carousel-image" />
-                        </div>
-                        {i == currentIndex && <span className="info">{`${currentIndex+1}/${childLenght}`}</span>}
-                    </>);
-            } ) }
-            <button className="carousel-button prev-button" onClick={handlePrev}>
-                &#10094;
-            </button>
-            <button className="carousel-button next-button" onClick={handleNext}>
-                &#10095;
-            </button>
+  return (
+    <div className="carrousel">
+        <div className="items">
+            {imagesList.map((imgSrc, i) => {
+                return <div key={i} className={`item-container ${current == i && 'current'}`} ><img src={imgSrc} alt=""/></div>
+            })}
         </div>
-    );
+        {imagesList.length > 1 && (
+            <>
+                <span className="carrousel-arrow left" onClick={handlePrev}>&#x276E;</span>
+                <span className="carrousel-arrow right" onClick={handleNext}>&#x276F;</span>
+                <span className="show-current">{current+1 + '/' + listLenght}</span>
+            </>
+        )}
+    </div>
+  )
 }
