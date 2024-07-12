@@ -1,32 +1,12 @@
 import Dropdown from "@components/Dropdown/Dropdown.tsx";
 import RateStars from "@components/RateStars/RateStars.tsx";
 import Carrousel from "@components/Carousel/Carousel";
-import { fetchById } from "@src/services/services.ts";
 import { Accommodation } from "@interfaces/Accommodation.tsx";
 import "./Appartement.scss";
-import { useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 
 export default function Appartement() {
     const appart = useLoaderData() as Accommodation;
-    const { id } = useParams();
-    const navigate = useNavigate();
-    // const [appart, setAppart] = useState<Accommodation>();
-
-    // useEffect(() => {
-    //     _init()
-    // }, []);
-
-
-    // async function  _init() {
-    //     const json = await fetchById(id)
-
-    //     if ( json === undefined ) {
-    //         navigate('404')
-    //     }
-
-    //     setAppart(json)
-    // }
 
     if (appart === undefined) {
         return <>Loading...</>
@@ -57,7 +37,7 @@ export default function Appartement() {
             </div>
             <section className="details">
                 <Dropdown title="Description">{ appart.description }</Dropdown>
-                <Dropdown title="Équipement">{ appart?.equipments.map( (e, i) => <li key={i}>{e}</li> ) } </Dropdown>
+                <Dropdown title="Équipement">{ appart?.equipments.map( (e :string, i :number) => <li key={i}>{e}</li> ) } </Dropdown>
             </section>
         </>
     );
