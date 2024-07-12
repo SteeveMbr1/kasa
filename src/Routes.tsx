@@ -4,7 +4,7 @@ import Home from "@pages/Home/Home";
 import _404 from "@pages/404/404";
 import About from "@pages/About/About";
 import Appartement from "@pages/Appartement/Appartement";
-import { fetchById } from "./services/services.ts";
+import { fetchAll, fetchById } from "./services/services.ts";
 
 export default createBrowserRouter([
     {
@@ -13,7 +13,14 @@ export default createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <Home />
+                element: <Home />,
+                loader :async () => {
+                    const json = await fetchAll()
+                    if ( !json ) {
+                        throw new Response("Not Found", { status: 404 });
+                    }
+                    return json;
+                }
             },
             {
                 path: "a-propos",
