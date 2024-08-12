@@ -11,23 +11,8 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@interfaces/*": [
-        "src/interfaces/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@src/*": [
-        "src/*"
+      "@/*": [
+        "./src/*"
       ],
     },
     /* Bundler mode */

@@ -1,7 +1,7 @@
-import Dropdown from "@components/Dropdown/Dropdown.tsx";
-import RateStars from "@components/RateStars/RateStars.tsx";
-import Carrousel from "@components/Carousel/Carousel";
-import { Accommodation } from "@interfaces/Accommodation.tsx";
+import Dropdown from "@/components/Dropdown/Dropdown.tsx";
+import RateStars from "@/components/RateStars/RateStars.tsx";
+import Carrousel from "@/components/Carousel/Carousel";
+import { Accommodation } from "@/interfaces/Accommodation.tsx";
 import "./Appartement.scss";
 import { useLoaderData} from "react-router-dom";
 

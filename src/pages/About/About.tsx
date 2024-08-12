@@ -1,7 +1,7 @@
-import HeroBanner from "@components/HeroBanner/HeroBanner";
-import image from "@assets/images/kalen-emsley-Bkci_8qcdvQ-unsplash.jpeg"
-import Dropdown from "@components/Dropdown/Dropdown";
-import './About..scss';
+import HeroBanner from "@/components/HeroBanner/HeroBanner";
+import image from "@/assets/images/kalen-emsley-Bkci_8qcdvQ-unsplash.jpeg"
+import Dropdown from "@/components/Dropdown/Dropdown";
+import './About.scss';
 
 export default function About() {
   return (

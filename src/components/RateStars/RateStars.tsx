@@ -1,6 +1,6 @@
 import "./RateStars.scss"
-import star from "@assets/icons/star.svg";
-import star_active from "@assets/icons/star-active.svg";
+import star from "@/assets/icons/star.svg";
+import star_active from "@/assets/icons/star-active.svg";
 
 export default function RateStars({ rate } : { rate : string|number }) {
 

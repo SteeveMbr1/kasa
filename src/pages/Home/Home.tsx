@@ -1,7 +1,7 @@
-import HeroBanner from '@components/HeroBanner/HeroBanner';
-import AppartmentCard from '@components/AppartmentCard/AppartmentCard.tsx';
-import image from '@assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpeg'
-import { Accommodation } from '@interfaces/Accommodation.tsx';
+import HeroBanner from '@/components/HeroBanner/HeroBanner';
+import AppartmentCard from '@/components/AppartmentCard/AppartmentCard.tsx';
+import image from '@/assets/images/eric-muhr-P_XxsdVgtpQ-unsplash.jpeg'
+import { Accommodation } from '@/interfaces/Accommodation.tsx';
 import './Home.scss'
 import { MouseEvent } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
