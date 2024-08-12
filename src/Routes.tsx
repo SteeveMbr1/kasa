@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import DefaultLayout from "@/layouts/DefaultLayout";
-import Home from "@/pages/Home/Home";
-import _404 from "@/pages/404/404";
-import About from "@/pages/About/About";
-import Appartement from "@/pages/Appartement/Appartement";
+import DefaultLayout from "../src/layouts/DefaultLayout";
+import Home from "../src/pages/Home/Home";
+import _404 from "../src/pages/404/404";
+import About from "../src/pages/About/About";
+import Appartement from "../src/pages/Appartement/Appartement";
 import { fetchAll, fetchById } from "./services/services.ts";
 
 const router = createBrowserRouter([

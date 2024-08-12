@@ -1,6 +1,6 @@
 import { MouseEvent, ReactNode, useState } from "react";
 import "./Dropdown.scss";
-import arrow from "@/assets/icons/arrow.svg";
+import arrow from "../../assets/icons/arrow.svg";
 
 type DropdownProps = {
     title: string;
