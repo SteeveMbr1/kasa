@@ -12,22 +12,22 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "./src/components/*"
+        "src/components/*"
       ],
       "@interfaces/*": [
-        "./src/interfaces/*"
+        "src/interfaces/*"
       ],
       "@assets/*": [
-        "./src/assets/*"
+        "src/assets/*"
       ],
       "@pages/*": [
-        "./src/pages/*"
+        "src/pages/*"
       ],
       "@layouts/*": [
         "src/layouts/*"
       ],
       "@src/*": [
-        "./src/*"
+        "src/*"
       ],
     },
     /* Bundler mode */

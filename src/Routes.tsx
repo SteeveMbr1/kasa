@@ -6,7 +6,7 @@ import About from "@pages/About/About";
 import Appartement from "@pages/Appartement/Appartement";
 import { fetchAll, fetchById } from "./services/services.ts";
 
-export default createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: "/",
         element: <DefaultLayout />,
@@ -44,4 +44,6 @@ export default createBrowserRouter([
             }
         ]
     }
-]);
+])
+
+export default router;
