@@ -1,10 +1,10 @@
-import { MouseEvent, useState } from "react";
+import { MouseEvent, ReactNode, useState } from "react";
 import "./Dropdown.scss";
 import arrow from "@assets/icons/arrow.svg";
 
 type DropdownProps = {
     title: string;
-    children?: any;
+    children?: string | ReactNode;
 };
 
 export default function Dropdown({ title, children }: DropdownProps) {

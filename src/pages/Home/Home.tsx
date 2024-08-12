@@ -11,7 +11,7 @@ export default function Home() {
     const apparts= useLoaderData() as Accommodation[];
     const navigate = useNavigate();
 
-    function clikedOn(event: MouseEvent<HTMLAnchorElement, MouseEvent>): void {
+    function clikedOn(event: MouseEvent): void {
         event.preventDefault();
         const nav = event.currentTarget.getAttribute('href') as string;
         navigate(nav);

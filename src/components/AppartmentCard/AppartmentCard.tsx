@@ -1,10 +1,11 @@
+import { MouseEventHandler } from "react";
 import "./AppartmentCard.scss";
 
 type AppartmentCardPorps = {
     cover: string;
     title: string;
     link: string;
-    clickEvent?: any;
+    clickEvent?: MouseEventHandler | undefined;
 };
 
 export default function AppartmentCard({ cover, title, link, clickEvent }: AppartmentCardPorps) {
