@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import DefaultLayout from "@layouts/RootLayout";
+import DefaultLayout from "@layouts/DefaultLayout.tsx";
 import Home from "@pages/Home/Home";
 import _404 from "@pages/404/404";
 import About from "@pages/About/About";
