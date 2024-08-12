@@ -6,11 +6,11 @@ export default function Carousel({imagesList} : {imagesList : string[]}) {
     const [current, setCurrent] = useState<number>(0);
     const listLenght = imagesList.length;
 
-    function handleNext(event: MouseEvent): void {
+    function handleNext(): void {
         setCurrent((current) => (current + 1) % listLenght );
     }
 
-    function handlePrev(event: MouseEvent): void {
+    function handlePrev(): void {
         setCurrent((current) => (current - 1 + listLenght) % listLenght );
     }
 
